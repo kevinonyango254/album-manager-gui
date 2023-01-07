@@ -1,6 +1,6 @@
 # Album Manager GUI
 
-This is a graphical user interface (GUI) application for managing a list of music albums. The user can add, remove, and update albums, and view the list of all albums. The application is built using PyQt5 and stores the list of albums in a file called 'cdmethods.json'.
+This is a graphical user interface (GUI) application for managing a list of music albums. The user can add, remove, and update albums, and view the list of all albums. The application is built using PyQt5 and stores the list of albums in a file called 'albums.json'.
 
 Fun fact: Majority of the code is written by chatGPT, including the readme.md.
 
