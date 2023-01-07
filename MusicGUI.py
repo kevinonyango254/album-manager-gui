@@ -3,7 +3,7 @@
 # Description: This file contains the GUI functions for calling methods in cdmethods.py.
 # Version: 1.0
 # Dependencies: PyQt5, json
-# License: MIT
+# License: -
 
 import sys
 import json
