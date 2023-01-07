@@ -41,4 +41,4 @@ python musicGUI.py
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+Free for everyone, always. Microsoft have to pay.
