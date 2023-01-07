@@ -1,9 +1,8 @@
-# album-manager-gui
-"This repository contains a graphical user interface (GUI) application for managing a list of music albums. The user can add, remove, and update albums, and view the list of all albums. The application is built using PyQt5 and stores the list of albums in a file called 'albums.json'."
-
 # Album Manager GUI
 
-This is a graphical user interface (GUI) application for managing a list of music albums. The user can add, remove, and update albums, and view the list of all albums. The application is built using PyQt5 and stores the list of albums in a file called 'cd.json'.
+This is a graphical user interface (GUI) application for managing a list of music albums. The user can add, remove, and update albums, and view the list of all albums. The application is built using PyQt5 and stores the list of albums in a file called 'cdmethods.json'.
+
+Fun fact: Majority of the code is written by chatGPT, including the readme.md.
 
 ## Prerequisites
 
@@ -14,7 +13,7 @@ This is a graphical user interface (GUI) application for managing a list of musi
 
 1. Clone the repository
 
-git clone https://github.com/[your-username]/album-manager-gui.git
+git clone https://github.com/joeraven0/album-manager-gui.git
 
 
 2. Install the dependencies
