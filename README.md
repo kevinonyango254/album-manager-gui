@@ -15,16 +15,19 @@ Fun fact: Majority of the code is written by chatGPT, including the readme.md.
 
 1. Clone the repository
 
+```bash
 git clone https://github.com/joeraven0/album-manager-gui.git
 
 
 2. Install the dependencies
 
+```bash
 pip install pyqt5 json
 
 
 3. Run the script
 
+```bash
 python musicGUI.py
 
 
