@@ -1,0 +1,20 @@
+[
+    {
+        "title": "Jag spelar disco i Riga",
+        "artist": "Gunde Svan",
+        "year": "1988",
+        "in_stock": "1"
+    },
+    {
+        "title": "K\u00e4nn ingen sorg f\u00f6r mig G\u00f6teborg",
+        "artist": "H\u00e5kan Hellstr\u00f6m",
+        "year": 1999,
+        "in_stock": 1
+    },
+    {
+        "title": "Jag \u00e5t en fisk",
+        "artist": "Ulf Lundell",
+        "year": "2005",
+        "in_stock": "1"
+    }
+]
