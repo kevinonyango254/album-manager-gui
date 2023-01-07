@@ -3,7 +3,7 @@
 # Description: This file contains functions for manipulating a list of music albums in albums.json.
 # Version: 1.0
 # Dependencies: json
-# License: MIT
+# License: -
 
 import json
 
