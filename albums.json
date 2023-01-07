@@ -1,20 +1,98 @@
 [
     {
-        "title": "Jag spelar disco i Riga",
-        "artist": "Gunde Svan",
-        "year": "1988",
-        "in_stock": "1"
+        "title": "A Camp",
+        "artist": "A Camp",
+        "year": "2001",
+        "in_stock": "1",
+        "format": "CD",
+        "notes": ""
     },
     {
-        "title": "K\u00e4nn ingen sorg f\u00f6r mig G\u00f6teborg",
-        "artist": "H\u00e5kan Hellstr\u00f6m",
-        "year": 1999,
-        "in_stock": 1
+        "title": "21",
+        "artist": "Adele",
+        "year": "2011",
+        "in_stock": "1",
+        "format": "CD",
+        "notes": ""
     },
     {
-        "title": "Jag \u00e5t en fisk",
-        "artist": "Ulf Lundell",
-        "year": "2005",
-        "in_stock": "1"
+        "title": "Den lilla b\u00e4cken - Allans b\u00e4sta",
+        "artist": "Allan Edwall",
+        "year": "2002",
+        "in_stock": "1",
+        "format": "CD",
+        "notes": ""
+    },
+    {
+        "title": "Killing my darlings",
+        "artist": "Amanda Jenssen",
+        "year": "2008",
+        "in_stock": "1",
+        "format": "CD",
+        "notes": ""
+    },
+    {
+        "title": "Jag fick feeling",
+        "artist": "Anna J\u00e4rvinen",
+        "year": "2007",
+        "in_stock": "1",
+        "format": "CD",
+        "notes": ""
+    },
+    {
+        "title": "Somebody outside",
+        "artist": "Anna Ternheim",
+        "year": "2004",
+        "in_stock": "1",
+        "format": "CD",
+        "notes": ""
+    },
+    {
+        "title": "Separation road",
+        "artist": "Anna Ternheim",
+        "year": "2006",
+        "in_stock": "1",
+        "format": "CD",
+        "notes": ""
+    },
+    {
+        "title": "Tidl\u00f6st",
+        "artist": "Anna-Lotta Larsson",
+        "year": "2003",
+        "in_stock": "1",
+        "format": "CD",
+        "notes": ""
+    },
+    {
+        "title": "Jeg er jo lige her",
+        "artist": "Anne Linnet",
+        "year": "1998",
+        "in_stock": "1",
+        "format": "CD",
+        "notes": ""
+    },
+    {
+        "title": "Tjejer",
+        "artist": "Arvingarna",
+        "year": "1994",
+        "in_stock": "1",
+        "format": "CD",
+        "notes": ""
+    },
+    {
+        "title": "Let go",
+        "artist": "Avril Lavigne",
+        "year": "2002",
+        "in_stock": "1",
+        "format": "CD",
+        "notes": "Skada baksida"
+    },
+    {
+        "title": "Absolute Norsk",
+        "artist": "Samlingsalbum",
+        "year": "1998",
+        "in_stock": "1",
+        "format": "CD",
+        "notes": ""
     }
 ]

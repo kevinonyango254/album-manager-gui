@@ -10,7 +10,7 @@ import json
 # Funktionen tar in parametrarna "title", "artist", "year" och "in_stock" som är värdena för album-objektet
 
 
-def add_album(title, artist, year, in_stock):
+def add_album(title, artist, year, in_stock, mediaformat, notes):
     # Öppna filen "albums.json" i läge "r" (read) för att läsa in innehållet
     with open("albums.json", "r") as file:
         # Läs in innehållet och omvandla det till en Python-lista
@@ -27,7 +27,9 @@ def add_album(title, artist, year, in_stock):
         "title": title,
         "artist": artist,
         "year": year,
-        "in_stock": in_stock
+        "in_stock": in_stock,
+        "format":mediaformat,
+        "notes":notes
     }
 
     # Lägg till det nya album-objektet till listan "albums"
@@ -69,7 +71,7 @@ def remove_album(title, artist):
 
 
 # Funktionen tar in parametrarna "title", "artist", "new_title", "new_artist", "year" och "in_stock" som är de nya värdena för album-objektet
-def update_album(title, artist, new_title, new_artist, year, in_stock):
+def update_album(title, artist, new_title, new_artist, year, in_stock, mediaformat, notes):
     # Öppna filen "albums.json" i läge "r" (read) för att läsa in innehållet
     with open("albums.json", "r") as file:
         # Läs in innehållet och omvandla det till en Python-lista
@@ -83,6 +85,8 @@ def update_album(title, artist, new_title, new_artist, year, in_stock):
             album["artist"] = new_artist
             album["year"] = year
             album["in_stock"] = in_stock
+            album["format"] = mediaformat
+            album["notes"] = notes
             break
 
     # Öppna filen "albums.json" i läge "w" (write) för att skriva till den
@@ -107,7 +111,7 @@ def print_albums():
     # Loopa igenom listan "albums" och lägg till information om varje album i strängen
     for album in albums:
         album_string = "{} - {} ({}, in stock: {})\n".format(
-            album["artist"], album["title"], album["year"], album["in_stock"])
+            album["artist"], album["title"], album["year"], album["in_stock"], album["format"], album["notes"])
         albums_string += album_string
 
     # Returnera strängen med information om albumen
