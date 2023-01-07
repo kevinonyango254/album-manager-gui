@@ -4,6 +4,8 @@ This is a graphical user interface (GUI) application for managing a list of musi
 
 Fun fact: Majority of the code is written by chatGPT, including the readme.md.
 
+![Album Manager GUI](Screenshot_20230107_194128.png)
+
 ## Prerequisites
 
 - PyQt5
