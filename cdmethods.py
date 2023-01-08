@@ -63,6 +63,7 @@ def remove_album(title, artist):
     # Öppna filen "albums.json" i läge "w" (write) för att skriva till den
     with open("albums.json", "w") as file:
         # Formatera den uppdaterade listan som en json-sträng med indenterat innehåll och radbrytningar
+        albums = sorted(albums, key=lambda album: album["year"])
         sorted_albums = sorted(albums, key=lambda album: album["artist"])
         formatted_json = json.dumps(
             sorted_albums, indent=4, separators=(',', ': '))
@@ -92,6 +93,7 @@ def update_album(title, artist, new_title, new_artist, year, in_stock, mediaform
     # Öppna filen "albums.json" i läge "w" (write) för att skriva till den
     with open("albums.json", "w") as file:
         # Formatera den uppdaterade listan som en json-sträng med indenterat innehåll och radbrytningar
+        albums = sorted(albums, key=lambda album: album["year"])
         sorted_albums = sorted(albums, key=lambda album: album["artist"])
         formatted_json = json.dumps(
             sorted_albums, indent=4, separators=(',', ': '))
