@@ -78,13 +78,16 @@ class AlbumManager(QWidget):
         in_stock = self.in_stock_field.text()
         mediaformat = self.media_format_field.text()
         notes = self.notes_field.text()
-
+        error = 0
         # Anropa add_album()-funktionen från "cd.py"
-        add_album(title, artist, year, in_stock, mediaformat, notes)
-
+        error = add_album(title, artist, year, in_stock, mediaformat, notes)
+        if error != 0:
+            self.output_field.setText("Error already exist: {} - {}".format(title, artist))
+        else:
+            self.output_field.setText("Added album: {} - {}".format(title, artist))
+            self.clear_input_fields()
         # Uppdatera output-fältet
-        self.output_field.setText("Added album: {} - {}".format(title, artist))
-        self.clear_input_fields()
+
         self.print_all_albums()
 
     def remove_album(self):
@@ -103,7 +106,7 @@ class AlbumManager(QWidget):
         print(title, artist, year, in_stock, mediaformat, notes)
 
         # Anropa remove_album()-funktionen från "cd.py"
-        remove_album(title, artist)
+        remove_album(title, artist, mediaformat)
 
         # Uppdatera output-fältet
         self.output_field.setText(
@@ -122,12 +125,16 @@ class AlbumManager(QWidget):
         selected_row = self.table.currentRow()
 
         # Läs ut innehållet i cellerna för den markerade raden och spara det i variabler
-        artist = self.table.item(selected_row, 0).text()
-        title = self.table.item(selected_row, 1).text()
-        year = self.table.item(selected_row, 2).text()
-        in_stock = self.table.item(selected_row, 3).text()
-        mediaformat = self.table.item(selected_row, 4).text()
-        notes = self.table.item(selected_row, 5).text()
+        try:
+            artist = self.table.item(selected_row, 0).text()
+            title = self.table.item(selected_row, 1).text()
+            year = self.table.item(selected_row, 2).text()
+            in_stock = self.table.item(selected_row, 3).text()
+            mediaformat = self.table.item(selected_row, 4).text()
+            notes = self.table.item(selected_row, 5).text()
+        except:
+            self.output_field.setText("Select a row to update")
+            return
 
         if len(new_title) < 1:
             new_title = title

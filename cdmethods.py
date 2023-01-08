@@ -12,6 +12,7 @@ import json
 
 def add_album(title, artist, year, in_stock, mediaformat, notes):
     # Öppna filen "albums.json" i läge "r" (read) för att läsa in innehållet
+    error = 0
     with open("albums.json", "r") as file:
         # Läs in innehållet och omvandla det till en Python-lista
         albums = json.load(file)
@@ -19,8 +20,9 @@ def add_album(title, artist, year, in_stock, mediaformat, notes):
     # Loopa igenom listan "albums" och leta efter ett album-objekt med rätt titel och artist
     for album in albums:
         # Om titeln och artisten på album-objektet matchar sökningen, avbryt funktionen
-        if album["title"] == title and album["artist"] == artist:
-            return
+        if album["title"] == title and album["artist"] == artist and album["format"] == mediaformat:
+            error = -1
+            return error
 
     # Skapa ett nytt album-objekt med hjälp av parametrarna
     new_album = {
@@ -44,10 +46,11 @@ def add_album(title, artist, year, in_stock, mediaformat, notes):
 
         # Skriv den formaterade strängen till filen
         file.write(formatted_json)
+    return 0
 
 
 # Funktionen tar in parametrarna "title" och "artist" som är titeln och artisten på det album som ska tas bort
-def remove_album(title, artist):
+def remove_album(title, artist, mediaformat):
     # Öppna filen "albums.json" i läge "r" (read) för att läsa in innehållet
     with open("albums.json", "r") as file:
         # Läs in innehållet och omvandla det till en Python-lista
@@ -56,7 +59,7 @@ def remove_album(title, artist):
     # Loopa igenom listan "albums" och leta efter ett album-objekt med rätt titel och artist
     for album in albums:
         # Om titeln och artisten på album-objektet matchar sökningen, ta bort det från listan
-        if album["title"] == title and album["artist"] == artist:
+        if album["title"] == title and album["artist"] == artist and album["format"] == mediaformat:
             albums.remove(album)
             break
 
