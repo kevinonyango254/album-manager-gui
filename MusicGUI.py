@@ -61,7 +61,25 @@ class AlbumManager(QWidget):
         main_layout.addLayout(buttons_layout)
         main_layout.addWidget(self.table)
         self.setLayout(main_layout)
-        self.table.setMinimumWidth(600)
+
+        # Sätt bredd för buttons_layout
+        buttons_layout_widgets_width = 150
+        self.artist_field.setFixedWidth(buttons_layout_widgets_width)
+        self.artist_field.setFixedWidth(buttons_layout_widgets_width)
+        self.title_field.setFixedWidth(buttons_layout_widgets_width)
+        self.year_field.setFixedWidth(buttons_layout_widgets_width)
+        self.in_stock_field.setFixedWidth(buttons_layout_widgets_width)
+        self.media_format_field.setFixedWidth(buttons_layout_widgets_width)
+        self.notes_field.setFixedWidth(buttons_layout_widgets_width)
+        self.output_field.setFixedWidth(buttons_layout_widgets_width)
+        self.output_field.setFixedHeight(50)
+        self.add_button.setFixedWidth(buttons_layout_widgets_width)
+        self.remove_button.setFixedWidth(buttons_layout_widgets_width)
+        self.update_button.setFixedWidth(buttons_layout_widgets_width)
+        self.print_button.setFixedWidth(buttons_layout_widgets_width)
+
+        # Sätt bredd för tabellen
+        self.table.setMinimumWidth(800)
         # Anslut gränssnittskomponenter till händelsehanterare
         self.add_button.clicked.connect(self.add_album)
         self.remove_button.clicked.connect(self.remove_album)
@@ -93,7 +111,6 @@ class AlbumManager(QWidget):
     def remove_album(self):
         # Spara index för den markerade raden i en variabel
         selected_row = self.table.currentRow()
-
         # Läs ut innehållet i cellerna för den markerade raden och spara det i variabler
         artist = self.table.item(selected_row, 0).text()
         title = self.table.item(selected_row, 1).text()
@@ -190,8 +207,8 @@ class AlbumManager(QWidget):
             self.table.setItem(i, 3, QTableWidgetItem(str(album['in_stock'])))
             self.table.setItem(i, 4, QTableWidgetItem(str(album['format'])))
             self.table.setItem(i, 5, QTableWidgetItem(str(album['notes'])))
-            self.table.resizeColumnToContents(0)
-            self.table.resizeColumnToContents(1)
+            #self.table.resizeColumnToContents(0)
+            #self.table.resizeColumnToContents(1)
             self.table.resizeColumnToContents(2)
             self.table.resizeColumnToContents(3)
             self.table.resizeColumnToContents(4)
