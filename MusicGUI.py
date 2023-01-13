@@ -10,7 +10,7 @@ import json
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QTextEdit, QPushButton, QVBoxLayout, QTableWidgetItem, QTableWidget, QHBoxLayout
 # Importera funktionerna från "cd.py"
 from cdmethods import add_album, remove_album, update_album, print_albums
-
+from ftpmethods import FTP_JSON_pusher
 
 class AlbumManager(QWidget):
     def __init__(self):
@@ -35,6 +35,7 @@ class AlbumManager(QWidget):
         self.update_button = QPushButton("Update album")
         self.print_button = QPushButton('Print All Albums')
         self.table = QTableWidget(len(print_albums()), 6)
+        self.upload_button = QPushButton("Upload json to website")
 
         # Skapa layouten för knapparna och fälten
         buttons_layout = QVBoxLayout()
@@ -55,6 +56,7 @@ class AlbumManager(QWidget):
         buttons_layout.addWidget(self.remove_button)
         buttons_layout.addWidget(self.update_button)
         buttons_layout.addWidget(self.print_button)
+        buttons_layout.addWidget(self.upload_button)
 
         # Skapa huvudlayouten
         main_layout = QHBoxLayout()
@@ -77,6 +79,7 @@ class AlbumManager(QWidget):
         self.remove_button.setFixedWidth(buttons_layout_widgets_width)
         self.update_button.setFixedWidth(buttons_layout_widgets_width)
         self.print_button.setFixedWidth(buttons_layout_widgets_width)
+        self.upload_button.setFixedWidth(buttons_layout_widgets_width)
 
         # Sätt bredd för tabellen
         self.table.setMinimumWidth(800)
@@ -85,9 +88,16 @@ class AlbumManager(QWidget):
         self.remove_button.clicked.connect(self.remove_album)
         self.update_button.clicked.connect(self.update_album)
         self.print_button.clicked.connect(self.print_all_albums)
+        self.upload_button.clicked.connect(self.ftpupload)
 
         self.print_all_albums()
-
+    def ftpupload(self):
+        error = FTP_JSON_pusher()
+        msg = "Upload succeed"
+        if error != 0:
+            msg = "Upload failed!"
+        self.output_field.setText(msg)
+            
     def add_album(self):
         # Hämta värdena från gränssnittskomponenterna
         title = self.title_field.text()
