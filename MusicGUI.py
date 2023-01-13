@@ -1,7 +1,8 @@
 # Author: Joakim Ringstad
-# Date: 2023-01-07
+# Date: 2023-01-13
 # Description: This file contains the GUI functions for calling methods in cdmethods.py.
-# Version: 1.0
+# Change log: Added FTP to upload albums.json to webserver.
+# Version: 1.1
 # Dependencies: PyQt5, json
 # License: -
 
