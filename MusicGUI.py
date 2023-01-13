@@ -83,7 +83,7 @@ class AlbumManager(QWidget):
         self.upload_button.setFixedWidth(buttons_layout_widgets_width)
 
         # Sätt bredd för tabellen
-        self.table.setMinimumWidth(800)
+        self.table.setMinimumWidth(600)
         # Anslut gränssnittskomponenter till händelsehanterare
         self.add_button.clicked.connect(self.add_album)
         self.remove_button.clicked.connect(self.remove_album)
