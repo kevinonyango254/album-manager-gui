@@ -8,11 +8,14 @@ Fun fact: Started as a try-out for coding with chatGPT-3 but grew bigger.
 
 ![Album Manager GUI](gitassets/Screenshot_20230113_202609.png)
 
+Figure 1 - Run MusicGUI.py graphical user interface to manipulate JSON
+
 ![Album Manager Website](gitassets/Screenshot_20230113_203503.png)
-Web server loading albums.json
+
+Figure 2 - Web server loading albums.json
 
 ![Album Manager Flow](gitassets/Screenshot_20230113_211255.png)
-Transmit albums.json over FTP by GUI button "Upload json to website"
+Figure 3 - Transmit albums.json over FTP by GUI button "Upload json to website"
 
 ## Prerequisites
 
