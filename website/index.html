@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Language" content="sv">
+    <meta charset="UTF-8">
+    <title>Min musiksamling</title>
+    <script src="albums.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>JMUX Dev</h1>
+        <nav>
+            <ul>
+                <li><a href="../">Home</a></li>
+                <li><a href="../albums">Albums</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Stores</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Min musiksamling</h1>
+        <input type="text" id="search-input" placeholder="Sök efter artist eller album">
+        <button id="search-button">Sök</button>
+        <table id="album-table">
+            <thead>
+                <tr>
+                    <th data-sort="title">Titel</th>
+                    <th data-sort="artist">Artist</th>
+                    <th data-sort="year">År</th>
+                    <th data-sort="in_stock">Tillgänglighet</th>
+                    <th data-sort="format">Format</th>
+                    <th data-sort="notes">Noter</th>
+                </tr>
+            </thead>
+            <tbody id="album-container"></tbody>
+        </table>
+    </main>
+
+    <footer>
+        <p>JMUX Dev</p>
+    </footer>
+</body>
+
+</html>
