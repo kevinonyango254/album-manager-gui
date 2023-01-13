@@ -6,9 +6,11 @@ FTP upload feature enables to push albums.json to a webserver. Index.html & java
 
 Fun fact: Part of the code is written by chatGPT, including the readme.md.
 
-![Album Manager GUI](Screenshot_20230113_202609.png)
+![Album Manager GUI](gitassets/Screenshot_20230113_202609.png)
 
-![Album Manager Website](Screenshot_20230113_203503.png)
+![Album Manager Website](gitassets/Screenshot_20230113_203503.png)
+
+![Album Manager Flow](gitassets/Screenshot_20230113_211255.png)
 
 ## Prerequisites
 
