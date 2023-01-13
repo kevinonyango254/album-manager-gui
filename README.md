@@ -4,7 +4,7 @@ This is a graphical user interface (GUI) application for managing a list of musi
 
 FTP upload feature enables to push albums.json to a webserver. Index.html & javascript to load json data to website also uploaded.
 
-Fun fact: Part of the code is written by chatGPT, including the readme.md.
+Fun fact: Started as a try-out for coding with chatGPT-3 but grew bigger.
 
 ![Album Manager GUI](gitassets/Screenshot_20230113_202609.png)
 
