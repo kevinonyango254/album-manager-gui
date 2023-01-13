@@ -32,7 +32,7 @@ pip install pyqt5 json
 
   * cridentials.txt
 
-4. Upload (optional for publishing online)
+4. Upload to web server (optional for publishing online)
 
   * index.html
   * styles.css
@@ -52,7 +52,7 @@ python MusicGUI.py
 3. To remove an album, select the album in the table and click the "Remove album" button.
 4. To update an album, select the album in the table, make the necessary changes in the input fields, and click the "Update album" button.
 5. To view the list of all albums, click the "Print All Albums" button.
-6. Upload through FTP (optional)
+6. Upload through FTP, click the "Upload json to website" button. (optional)
 
 ## License
 
