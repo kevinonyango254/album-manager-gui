@@ -4,9 +4,11 @@ This is a graphical user interface (GUI) application for managing a list of musi
 
 FTP upload feature enables to push albums.json to a webserver. Index.html & javascript to load json data to website also uploaded.
 
-Fun fact: Majority of the code is written by chatGPT, including the readme.md.
+Fun fact: Part of the code is written by chatGPT, including the readme.md.
 
 ![Album Manager GUI](Screenshot_20230113_202609.png)
+
+![Album Manager Website](Screenshot_20230113_203503.png)
 
 ## Prerequisites
 
@@ -28,14 +30,14 @@ pip install pyqt5 json
 ```
 3. Setup FTP cridentials in cridentials.txt (optional for publishing online)
 
-* cridentials.txt
+  * cridentials.txt
 
 4. Upload (optional for publishing online)
 
-* index.html
-* styles.css
-* albums.js
-* albums.json (or upload through gui)
+  * index.html
+  * styles.css
+  * albums.js
+  * albums.json (or upload through gui)
 
 4. Run the script
 
