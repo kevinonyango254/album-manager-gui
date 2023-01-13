@@ -15,6 +15,7 @@ Figure 1 - Run MusicGUI.py graphical user interface to manipulate JSON
 Figure 2 - Web server loading albums.json
 
 ![Album Manager Flow](gitassets/Screenshot_20230113_211255.png)
+
 Figure 3 - Transmit albums.json over FTP by GUI button "Upload json to website"
 
 ## Prerequisites
