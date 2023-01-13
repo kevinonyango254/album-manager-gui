@@ -18,6 +18,14 @@ Figure 2 - Web server loading albums.json
 
 Figure 3 - Transmit albums.json over FTP by GUI button "Upload json to website"
 
+## Change log
+### 2023-01-13
+ - Added website files, albums in albums.json file are loaded to html with javascript
+ - Added FTP upload feature from button on the GUI
+ - Minimum table width reduced in GUI
+
+ 
+
 ## Prerequisites
 
 - PyQt5
