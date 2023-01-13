@@ -2,9 +2,29 @@
 
 This is a graphical user interface (GUI) application for managing a list of music albums. The user can add, remove, and update albums, and view the list of all albums. The application is built using PyQt5 and stores the list of albums in a file called 'albums.json'.
 
-Fun fact: Majority of the code is written by chatGPT, including the readme.md.
+FTP upload feature enables to push albums.json to a webserver. Index.html & javascript to load json data to website also uploaded.
 
-![Album Manager GUI](Screenshot_20220912_041538.png)
+Fun fact: Started as a try-out for coding with chatGPT-3 but grew bigger.
+
+![Album Manager GUI](gitassets/Screenshot_20230113_202609.png)
+
+Figure 1 - Run MusicGUI.py graphical user interface to manipulate JSON
+
+![Album Manager Website](gitassets/Screenshot_20230113_203503.png)
+
+Figure 2 - Web server loading albums.json
+
+![Album Manager Flow](gitassets/Screenshot_20230113_211255.png)
+
+Figure 3 - Transmit albums.json over FTP by GUI button "Upload json to website"
+
+## Change log
+### 2023-01-13
+ - Added website files, albums in albums.json file are loaded to html with javascript
+ - Added FTP upload feature from button in the GUI
+ - Minimum table width reduced in GUI
+
+ 
 
 ## Prerequisites
 
@@ -24,11 +44,21 @@ git clone https://github.com/joeraven0/album-manager-gui.git
 ```bash
 pip install pyqt5 json
 ```
+3. Setup FTP cridentials in cridentials.txt (optional for publishing online)
 
-3. Run the script
+  * cridentials.txt
+
+4. Upload to web server (optional for publishing online)
+
+  * index.html
+  * styles.css
+  * albums.js
+  * albums.json (or upload through gui)
+
+5. Run the script
 
 ```bash
-python musicGUI.py
+python MusicGUI.py
 ```
 
 ## Usage
@@ -38,6 +68,7 @@ python musicGUI.py
 3. To remove an album, select the album in the table and click the "Remove album" button.
 4. To update an album, select the album in the table, make the necessary changes in the input fields, and click the "Update album" button.
 5. To view the list of all albums, click the "Print All Albums" button.
+6. Upload through FTP, click the "Upload json to website" button. (optional)
 
 ## License
 

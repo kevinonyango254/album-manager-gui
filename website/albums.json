@@ -1,0 +1,18 @@
+[
+    {
+        "title": "A Camp",
+        "artist": "A Camp",
+        "year": "2001",
+        "in_stock": "1",
+        "format": "CD",
+        "notes": ""
+    },
+    {
+        "title": "Voulez-Vous",
+        "artist": "Abba",
+        "year": "1979",
+        "in_stock": "1",
+        "format": "LP",
+        "notes": ""
+    }
+]
