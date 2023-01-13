@@ -9,8 +9,10 @@ Fun fact: Started as a try-out for coding with chatGPT-3 but grew bigger.
 ![Album Manager GUI](gitassets/Screenshot_20230113_202609.png)
 
 ![Album Manager Website](gitassets/Screenshot_20230113_203503.png)
+Web server loading albums.json
 
 ![Album Manager Flow](gitassets/Screenshot_20230113_211255.png)
+Transmit albums.json over FTP by GUI button "Upload json to website"
 
 ## Prerequisites
 
@@ -41,7 +43,7 @@ pip install pyqt5 json
   * albums.js
   * albums.json (or upload through gui)
 
-4. Run the script
+5. Run the script
 
 ```bash
 python MusicGUI.py
