@@ -23,21 +23,22 @@ Figure 3 - Transmit albums.json over FTP by GUI button "Upload json to website"
  - Added website files, albums in albums.json file are loaded to html with javascript
  - Added FTP upload feature from button in the GUI
  - Minimum table width reduced in GUI
+### 2023-01-15
 
- 
+ - Added PKGBUILD AUR installer
 
 ## Prerequisites
 
+- Python 3.10 or above
 - PyQt5
 - json
 
-## Installation
+## Installation method 1 - Run Python from source
 
 1. Clone the repository
 
 ```bash
 git clone https://github.com/joeraven0/album-manager-gui.git
-
 ```
 2. Install the dependencies
 
@@ -61,6 +62,35 @@ pip install pyqt5 json
 python MusicGUI.py
 ```
 
+## Installation method 2 - Install from Arch AUR package
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/joeraven0/album-manager-gui.git
+```
+
+2. Install the dependencies
+
+```bash
+pip install pyqt5 json
+```
+
+3. Build the package
+
+```bash
+makepkg
+```
+4. Install
+
+```bash
+pacman -U album-manager-gui-X.X-X-any.pkg.tar.zst
+```
+5. Set your FTP-cridentials (optional)
+
+```bash
+nano /usr/lib/album-manager-gui/cridentials.txt
+```
 ## Usage
 
 1. Enter the artist, title, year, and number of copies in stock for the album you want to add.
