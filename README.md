@@ -1,5 +1,7 @@
 # Album Manager GUI
 
+## Description
+
 This is a graphical user interface (GUI) application for managing a list of music albums. The user can add, remove, and update albums, and view the list of all albums. The application is built using PyQt5 and stores the list of albums in a file called 'albums.json'.
 
 FTP upload feature enables to push albums.json to a webserver. Index.html & javascript to load json data to website also uploaded.
@@ -17,6 +19,14 @@ Figure 2 - Web server loading albums.json
 ![Album Manager Flow](gitassets/Screenshot_20230113_211255.png)
 
 Figure 3 - Transmit albums.json over FTP by GUI button "Upload json to website"
+
+## File locations
+
+cridentials.txt contains FTP login cridentials.
+AUR location /usr/lib/album-manager-gui/cridentials.txt
+
+albums.json contains album data - IMPORTANT! Uninstalling through pacman will delete this file. Make a backup if you want to save it.
+AUR location /usr/lib/album-manager-gui/albums.json
 
 ## Change log
 ### 2023-01-13
