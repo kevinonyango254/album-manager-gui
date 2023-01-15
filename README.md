@@ -1,6 +1,7 @@
 # Album Manager GUI
 
-Website rendering my personal albums.json file
+Website to where I push my personal albums.json file.
+
 [https://dev.jmux.se/albums](https://dev.jmux.se/albums)
 
 ## Description
