@@ -1,0 +1,12 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Name=Album manager GUI
+GenericName=Add and list albums
+Comment=Keep track of your albums by adding, removing or uploading albums.json over ftp.
+Categories=AudioVideo;
+Exec=album-manager-gui
+Terminal=false
+Type=Application
+Icon=album-manager-gui
+StartupNotify=true
