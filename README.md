@@ -29,11 +29,11 @@ albums.json contains album data - IMPORTANT! Uninstalling through pacman will de
 AUR location /usr/lib/album-manager-gui/albums.json
 
 ## Change log
-### 2023-01-13
+### 2023-01-13 v0.0.0
  - Added website files, albums in albums.json file are loaded to html with javascript
  - Added FTP upload feature from button in the GUI
  - Minimum table width reduced in GUI
-### 2023-01-15
+### 2023-01-15 v.1.0.0
 
  - Added PKGBUILD AUR installer
 
