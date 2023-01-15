@@ -1,5 +1,7 @@
 # Album Manager GUI
 
+## Description
+
 This is a graphical user interface (GUI) application for managing a list of music albums. The user can add, remove, and update albums, and view the list of all albums. The application is built using PyQt5 and stores the list of albums in a file called 'albums.json'.
 
 FTP upload feature enables to push albums.json to a webserver. Index.html & javascript to load json data to website also uploaded.
@@ -18,26 +20,35 @@ Figure 2 - Web server loading albums.json
 
 Figure 3 - Transmit albums.json over FTP by GUI button "Upload json to website"
 
+## File locations
+
+cridentials.txt contains FTP login cridentials.
+AUR location /usr/lib/album-manager-gui/cridentials.txt
+
+albums.json contains album data - IMPORTANT! Uninstalling through pacman will delete this file. Make a backup if you want to save it.
+AUR location /usr/lib/album-manager-gui/albums.json
+
 ## Change log
 ### 2023-01-13
  - Added website files, albums in albums.json file are loaded to html with javascript
  - Added FTP upload feature from button in the GUI
  - Minimum table width reduced in GUI
+### 2023-01-15
 
- 
+ - Added PKGBUILD AUR installer
 
 ## Prerequisites
 
+- Python 3.10 or above
 - PyQt5
 - json
 
-## Installation
+## Installation method 1 - Run Python from source
 
 1. Clone the repository
 
 ```bash
 git clone https://github.com/joeraven0/album-manager-gui.git
-
 ```
 2. Install the dependencies
 
@@ -61,6 +72,35 @@ pip install pyqt5 json
 python MusicGUI.py
 ```
 
+## Installation method 2 - Install from Arch AUR package
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/joeraven0/album-manager-gui.git
+```
+
+2. Install the dependencies
+
+```bash
+pip install pyqt5 json
+```
+
+3. Build the package
+
+```bash
+makepkg
+```
+4. Install
+
+```bash
+pacman -U album-manager-gui-X.X-X-any.pkg.tar.zst
+```
+5. Set your FTP-cridentials (optional)
+
+```bash
+nano /usr/lib/album-manager-gui/cridentials.txt
+```
 ## Usage
 
 1. Enter the artist, title, year, and number of copies in stock for the album you want to add.
