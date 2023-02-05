@@ -1,5 +1,5 @@
 pkgname=album-manager-gui
-pkgver=1.0
+pkgver=1.2
 pkgrel=1
 pkgdesc="A GUI to keep track of all your albums"
 arch=('any')
