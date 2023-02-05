@@ -33,9 +33,10 @@ albums.json contains album data - IMPORTANT! Uninstalling through pacman will de
 AUR location /usr/lib/album-manager-gui/albums.json
 
 ## Change log
-### 2023-02-05 v.1.2
+### 2023-02-05 v.1.2.0
 
  - Added musicbrainz api album search feature
+ - Improved output field layout
 ### 2023-01-15 v.1.0.0
 
  - Added PKGBUILD AUR installer
