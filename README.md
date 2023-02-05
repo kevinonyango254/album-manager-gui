@@ -12,7 +12,7 @@ FTP upload feature enables to push albums.json to a webserver. Index.html & java
 
 Fun fact: Started as a try-out for coding with chatGPT-3 but grew bigger.
 
-![Album Manager GUI](gitassets/Screenshot_20230113_202609.png)
+![Album Manager GUI](gitassets/Screenshot_20230205_191953.png)
 
 Figure 1 - Run MusicGUI.py graphical user interface to manipulate JSON
 
