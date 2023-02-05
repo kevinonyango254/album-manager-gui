@@ -1,8 +1,10 @@
 # Author: Joakim Ringstad
-# Date: 2023-01-13
+# Date: 2023-02-05
 # Description: This file contains the GUI functions for calling methods in cdmethods.py.
-# Change log: Added FTP to upload albums.json to webserver.
-# Version: 1.1
+# Change log: 
+# 1.1 Added FTP to upload albums.json to webserver.
+# 1.2 Added musicbrainz search feature
+# Version: 1.2
 # Dependencies: PyQt5, json
 # License: -
 
@@ -12,6 +14,7 @@ from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QTextEdit,
 # Importera funktionerna från "cd.py"
 from cdmethods import add_album, remove_album, update_album, print_albums
 from ftpmethods import FTP_JSON_pusher
+import musicbrainzngs
 
 class AlbumManager(QWidget):
     def __init__(self):
@@ -34,14 +37,16 @@ class AlbumManager(QWidget):
         self.add_button = QPushButton("Add album")
         self.remove_button = QPushButton("Remove album")
         self.update_button = QPushButton("Update album")
-        self.print_button = QPushButton('Print All Albums')
+        self.search_button = QPushButton('Search albums')
         self.table = QTableWidget(len(print_albums()), 6)
         self.upload_button = QPushButton("Upload json to website")
 
         # Skapa layouten för knapparna och fälten
         buttons_layout = QVBoxLayout()
+        output_layout = QVBoxLayout()
         buttons_layout.addWidget(self.artist_label)
         buttons_layout.addWidget(self.artist_field)
+        buttons_layout.addWidget(self.search_button)
         buttons_layout.addWidget(self.title_label)
         buttons_layout.addWidget(self.title_field)
         buttons_layout.addWidget(self.year_label)
@@ -52,16 +57,16 @@ class AlbumManager(QWidget):
         buttons_layout.addWidget(self.media_format_field)
         buttons_layout.addWidget(self.notes_label)
         buttons_layout.addWidget(self.notes_field)
-        buttons_layout.addWidget(self.output_field)
+        output_layout.addWidget(self.output_field)
         buttons_layout.addWidget(self.add_button)
         buttons_layout.addWidget(self.remove_button)
         buttons_layout.addWidget(self.update_button)
-        buttons_layout.addWidget(self.print_button)
         buttons_layout.addWidget(self.upload_button)
-
         # Skapa huvudlayouten
         main_layout = QHBoxLayout()
+        
         main_layout.addLayout(buttons_layout)
+        main_layout.addLayout(output_layout)
         main_layout.addWidget(self.table)
         self.setLayout(main_layout)
 
@@ -74,12 +79,12 @@ class AlbumManager(QWidget):
         self.in_stock_field.setFixedWidth(buttons_layout_widgets_width)
         self.media_format_field.setFixedWidth(buttons_layout_widgets_width)
         self.notes_field.setFixedWidth(buttons_layout_widgets_width)
-        self.output_field.setFixedWidth(buttons_layout_widgets_width)
-        self.output_field.setFixedHeight(50)
+        self.output_field.setFixedWidth(buttons_layout_widgets_width+200)
+        #self.output_field.setFixedHeight(50)
         self.add_button.setFixedWidth(buttons_layout_widgets_width)
         self.remove_button.setFixedWidth(buttons_layout_widgets_width)
         self.update_button.setFixedWidth(buttons_layout_widgets_width)
-        self.print_button.setFixedWidth(buttons_layout_widgets_width)
+        self.search_button.setFixedWidth(buttons_layout_widgets_width)
         self.upload_button.setFixedWidth(buttons_layout_widgets_width)
 
         # Sätt bredd för tabellen
@@ -88,7 +93,7 @@ class AlbumManager(QWidget):
         self.add_button.clicked.connect(self.add_album)
         self.remove_button.clicked.connect(self.remove_album)
         self.update_button.clicked.connect(self.update_album)
-        self.print_button.clicked.connect(self.print_all_albums)
+        self.search_button.clicked.connect(self.get_artist_albums)
         self.upload_button.clicked.connect(self.ftpupload)
 
         self.print_all_albums()
@@ -185,6 +190,30 @@ class AlbumManager(QWidget):
             "Updated album: {} - {}".format(new_title, new_artist))
         self.clear_input_fields()
         self.print_all_albums()
+
+    def get_artist_albums(self):
+        self.output_field.clear()
+        try:
+            artist_name = self.artist_field.text()
+            musicbrainzngs.set_useragent("jmux.se", "0.1")
+            result = musicbrainzngs.search_artists(artist=artist_name)
+            artist_id = result['artist-list'][0]['id']
+            albums = []
+            textoutput = "Albums collected from musicbrainz\n" + artist_name
+            for release_group in musicbrainzngs.browse_release_groups(artist=artist_id)['release-group-list']:
+                albums.append({
+                    'format': release_group['primary-type'],
+                    'title': release_group['title'],
+                    'year': release_group['first-release-date'][:4]
+                })
+            for album in albums:
+                textoutput = textoutput + "\n" + album['year'] + " " + album['format'] + " " + album['title']
+                
+                #print(album['year'], album['format'], album['title']) 
+            self.output_field.setText(textoutput)  
+        except:
+            self.output_field.setText("Musicbrainz error. Check api or useragent")
+
 
     def print_all_albums(self):
         # Anropa print_albums()-funktionen från cd.py och spara resultatet i en variabel

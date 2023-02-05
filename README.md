@@ -12,7 +12,7 @@ FTP upload feature enables to push albums.json to a webserver. Index.html & java
 
 Fun fact: Started as a try-out for coding with chatGPT-3 but grew bigger.
 
-![Album Manager GUI](gitassets/Screenshot_20230113_202609.png)
+![Album Manager GUI](gitassets/Screenshot_20230205_191953.png)
 
 Figure 1 - Run MusicGUI.py graphical user interface to manipulate JSON
 
@@ -33,6 +33,10 @@ albums.json contains album data - IMPORTANT! Uninstalling through pacman will de
 AUR location /usr/lib/album-manager-gui/albums.json
 
 ## Change log
+### 2023-02-05 v.1.2.0
+
+ - Added musicbrainz api album search feature
+ - Improved output field layout
 ### 2023-01-15 v.1.0.0
 
  - Added PKGBUILD AUR installer
